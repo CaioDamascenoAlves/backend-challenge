@@ -1,7 +1,10 @@
+import { UpdadeCountryDto } from './dto/updade-country.dto';
+import { CreateCountryDto } from './dto/create-country.dto';
 import { ConflictException, Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Country } from './country.entity';
+import { HttpException, HttpStatus } from '@nestjs/common';
 
 @Injectable()
 export class CountriesService {
@@ -11,53 +14,112 @@ export class CountriesService {
   ) {}
 
   async findAll(): Promise<Country[]> {
-    return await this.countriesRepository.find({
-      order: {
-        meta: 'ASC',
-      },
-    });
-  }  
+    try {
+      return await this.countriesRepository.find({
+        order: {
+          meta: 'ASC',
+        },
+      });
+    } catch (error) {
+      throw new HttpException(
+        'An error occurred while getting the countries.',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
+  }
 
   async findOne(id: number): Promise<Country> {
-    return await this.countriesRepository.findOne({ where: { id } });
+    try {
+      const country = await this.countriesRepository.findOne({ where: { id } });
+
+      if (!country) {
+        throw new HttpException('Country not found', HttpStatus.NOT_FOUND);
+      }
+
+      return country;
+    } catch (error) {
+      throw new HttpException(
+        'An error occurred while getting the country.',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 
-  async create(country: Country): Promise<Country> {
-    const existingCountry = await this.countriesRepository.findOne({
-      where: { name: country.name, place: country.place },
-    });
-    if (existingCountry) {
-      throw new ConflictException('Este país já existe com o mesmo lugar.');
+  async create(createCountryDto: CreateCountryDto): Promise<Country> {
+    try {
+      const existingCountry = await this.countriesRepository.findOne({
+        where: { name: createCountryDto.name, place: createCountryDto.place },
+      });
+      if (existingCountry) {
+        throw new HttpException('Country already exists', HttpStatus.CONFLICT);
+      }
+
+      const contry = new Country();
+      contry.name = createCountryDto.name;
+      contry.place = createCountryDto.place;
+      contry.meta = createCountryDto.meta;
+      contry.created_at = new Date();
+      contry.updated_at = new Date();
+
+      const newCountry = this.countriesRepository.create(contry);
+      return await this.countriesRepository.save(newCountry);
+    } catch (error) {
+      throw new HttpException(
+        'An error occurred while creating the country.',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
-    const newCountry = this.countriesRepository.create(country);
-    return await this.countriesRepository.save(newCountry);
   }
 
-  async update(id: number, updatedFields: Partial<Country>): Promise<Country> {
-    const existingCountry = await this.countriesRepository.findOne({
-      where: { id },
-    });
-    if (!existingCountry) {
-      throw new Error('Country not found');
+  async update(
+    id: number,
+    updadeCountryDto: UpdadeCountryDto,
+  ): Promise<Country> {
+    try {
+      const existingCountry = await this.countriesRepository.findOne({
+        where: { id },
+      });
+      if (!existingCountry) {
+        throw new HttpException('Country not found', HttpStatus.NOT_FOUND);
+      }
+
+      const fieldsToUpdated = Object.keys(updadeCountryDto);
+      const allowedFieldsToUpdate = ['place', 'meta'];
+
+      fieldsToUpdated.forEach((field) => {
+        if (!allowedFieldsToUpdate.includes(field)) {
+          throw new HttpException(
+            `${field} is not a valid field to update.`,
+            HttpStatus.BAD_REQUEST,
+          );
+        }
+        existingCountry[field] = updadeCountryDto[field];
+      });
+
+      return await this.countriesRepository.save(existingCountry);
+    } catch (error) {
+      throw new HttpException(
+        'An error occurred while updating the country.',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
     }
-
-    const fieldsToUpdated = Object.keys(updatedFields);
-    const allowedFieldsToUpdate = ['place', 'meta'];
-    const isValidOperation = fieldsToUpdated.every((field) => {
-        allowedFieldsToUpdate.includes(field);
-    });
-
-    if (!isValidOperation) {
-        throw new Error('Invalid update: Only "place" and "meta" are allowed');
-    }
-
-    const updatedCountry = Object.assign(existingCountry, updatedFields);
-    updatedCountry.updated_at = new Date();
-
-    return await this.countriesRepository.save(updatedCountry);
   }
 
   async delete(id: number): Promise<void> {
-    await this.countriesRepository.delete(id);
+    try {
+      const existingCountry = await this.countriesRepository.findOne({
+        where: { id },
+      });
+      if (!existingCountry) {
+        throw new HttpException('Country not found', HttpStatus.NOT_FOUND);
+      }
+
+      await this.countriesRepository.delete(id);
+    } catch (error) {
+      throw new HttpException(
+        'An error occurred while deleting the country.',
+        HttpStatus.INTERNAL_SERVER_ERROR,
+      );
+    }
   }
 }
