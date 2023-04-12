@@ -6,12 +6,18 @@ import {
   Param,
   Delete,
   Patch,
-  ConflictException,
-  InternalServerErrorException,
 } from '@nestjs/common';
 import { CountriesService } from './countries.service';
 import { Country } from './country.entity';
-import { ApiResponse, ApiTags, ApiBody } from '@nestjs/swagger';
+import {
+  ApiTags,
+  ApiBody,
+  ApiConflictResponse,
+  ApiOkResponse,
+  ApiInternalServerErrorResponse,
+  ApiBadRequestResponse,
+  ApiNotFoundResponse,
+} from '@nestjs/swagger';
 import { UpdadeCountryDto } from './dto/updade-country.dto';
 import { CreateCountryDto } from './dto/create-country.dto';
 
@@ -21,16 +27,20 @@ export class CountriesController {
   constructor(private readonly countriesService: CountriesService) {}
 
   @Get()
-  @ApiResponse({
-    status: 200,
-    description: 'Return all countries sorted in ascending order by meta field',
+  @ApiOkResponse({ description: 'Return all countries.', type: [Country] })
+  @ApiInternalServerErrorResponse({
+    description: 'An error occurred while getting the countries.',
   })
   async findAll(): Promise<Country[]> {
     return await this.countriesService.findAll();
   }
 
   @Get(':id')
-  @ApiResponse({ status: 200, description: 'Return a country.' })
+  @ApiOkResponse({ description: 'Return a country.', type: Country })
+  @ApiNotFoundResponse({ description: 'Country not found' })
+  @ApiInternalServerErrorResponse({
+    description: 'An error occurred while getting the country.',
+  })
   async findOne(@Param('id') id: number): Promise<Country> {
     const country = await this.countriesService.findOne(id);
     if (!country) {
@@ -41,64 +51,37 @@ export class CountriesController {
   }
 
   @Post()
-  @ApiBody({
-    type: CreateCountryDto,
-    schema: {
-      example: {
-        name: 'Brasil',
-        place: 'América do Sul',
-        meta: '2020-01-01',
-      },
-    },
+  @ApiBody({ type: CreateCountryDto })
+  @ApiOkResponse({ description: 'Create a country.', type: Country })
+  @ApiConflictResponse({ description: 'The country already exists' })
+  @ApiInternalServerErrorResponse({
+    description: 'An error occurred while creating the country.',
   })
-  @ApiResponse({ status: 201, description: 'Create a country.', type: Country })
-  async create(@Body() country: Country): Promise<Country> {
-    try {
-      const createdCountry = await this.countriesService.create(country);
-      return createdCountry;
-    } catch (error) {
-      if (error instanceof ConflictException) {
-        throw new ConflictException(
-          'This country already exists with the same place.',
-        );
-      } else {
-        throw new InternalServerErrorException(
-          'An error occurred while creating the Country',
-        );
-      }
-    }
+  async create(@Body() createCountryDto: CreateCountryDto): Promise<Country> {
+    return await this.countriesService.create(createCountryDto);
   }
 
   @Patch(':id')
-  @ApiBody({
-    type: UpdadeCountryDto,
-    schema: {
-      example: {
-        place: 'Natal',
-        meta: '2020-01-01',
-      },
-    },
+  @ApiOkResponse({ description: 'Update a country.', type: Country })
+  @ApiBadRequestResponse({ description: 'Bad request' })
+  @ApiNotFoundResponse({ description: 'Country not found' })
+  @ApiInternalServerErrorResponse({
+    description: 'An error occurred while updating the country.',
   })
-  @ApiResponse({ status: 200, description: 'Update a country for fields' })
   async update(
     @Param('id') id: number,
-    @Body() updatedFields: Partial<Country>,
+    @Body() updatedCountryDto: UpdadeCountryDto,
   ): Promise<Country> {
-    const updatedCountry = await this.countriesService.update(
-      id,
-      updatedFields,
-    );
-    return updatedCountry;
+    return await this.countriesService.update(id, updatedCountryDto);
   }
 
   @Delete(':id/delete')
-  @ApiResponse({ status: 200, description: 'Delete a country.' })
+  @ApiNotFoundResponse({ description: 'Country not found' })
+  @ApiOkResponse({ description: 'Delete a country.' })
+  @ApiInternalServerErrorResponse({
+    description: 'An error occurred while updating the country.',
+  })
   async delete(@Param('id') id: number): Promise<void> {
-    const countryExists = await this.countriesService.findOne(id);
-    if (!countryExists) {
-      throw new Error('Country not found');
-    } else {
-      return await this.countriesService.delete(id);
-    }
+    return await this.countriesService.delete(id);
   }
 }
