@@ -5,8 +5,8 @@
 
 - [Descrição](#descrição)
   - [O Desafio](#o-desafio)
-  - [Requisitos Obrigatórios](#tecnologias-utilizadas)
-  - [Bônus](#requisitos)
+  - [Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Requisitos](#requisitos)
   - [Como executar o projeto](#como-executar-o-projeto)
 
 ## Descrição
