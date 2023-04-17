@@ -30,18 +30,19 @@ Os dados a ser considerados são:
 
 #### Tecnologias Utilizadas
 
-- [NodeJs](https://nodejs.org/en)
-- [NestJs](https://nestjs.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [TypeORM](https://typeorm.io/#/)
 - [Docker](https://docs.docker.com/compose/)
+- [NestJs](https://nestjs.com/)
+- [NodeJs](https://nodejs.org/en)
 - [Postgres](https://www.postgresql.org/)
+- [TypeORM](https://typeorm.io/#/)
+- [TypeScript](https://www.typescriptlang.org/)
 - [Swegger](https://swagger.io/)
 
 #### Requisitos
-- [NodeJs](https://nodejs.org/en)
+
 - [Docker](https://docs.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
+- [NodeJs](https://nodejs.org/en)
 
 ### Como executar o projeto
 Clone o repositório em sua máquina local:
@@ -59,7 +60,7 @@ Instale o Yarn:
   
   ```
 Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
-  > Nome-ie como stage.dev.env
+  > Nomeie como stage.dev.env
   ```
   PORT=3000
   DB_HOST=DB
