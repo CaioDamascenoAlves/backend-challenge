@@ -45,9 +45,9 @@ Os dados a ser considerados são:
 
 ### Como executar o projeto
 1. Clone o repositório em sua máquina local:
-  
+  ´´´
   git clone https://github.com/CaioDamascenoAlves/backend-challenge.git
-  
+  ´´´
 2. Acesse o diretório do projeto:
   
   cd backend-challenge
