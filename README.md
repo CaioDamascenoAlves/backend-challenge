@@ -59,7 +59,8 @@ Instale o Yarn:
   
   ```
 Criar um arquivo para configurar variaveis de ambiente:
-  > Esse arquivo tem que se chamar stage.dev.env
+  > Name: stage.dev.env
+  > Cria-lo na raiz do projeto
   ```
   
   ```
