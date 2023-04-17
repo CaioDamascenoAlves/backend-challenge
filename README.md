@@ -44,7 +44,7 @@ Os dados a ser considerados são:
 - [Docker Compose](https://docs.docker.com/compose/);
 
 ### Como executar o projeto
-1. Clone o repositório em sua máquina local:
+Clone o repositório em sua máquina local:
   ```
   git clone https://github.com/CaioDamascenoAlves/backend-challenge.git
   ```
