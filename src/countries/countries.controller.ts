@@ -18,7 +18,7 @@ import {
   ApiBadRequestResponse,
   ApiNotFoundResponse,
 } from '@nestjs/swagger';
-import { UpdadeCountryDto } from './dto/updade-country.dto';
+import { UpdateCountryDto } from './dto/updade-country.dto';
 import { CreateCountryDto } from './dto/create-country.dto';
 
 @Controller('countries')
@@ -36,7 +36,7 @@ export class CountriesController {
   }
 
   @Get(':id')
-  @ApiOkResponse({ description: 'Return a country.', type: Country })
+  @ApiOkResponse({ status: 201, description: 'Return a country.', type: Country })
   @ApiNotFoundResponse({ description: 'Country not found' })
   @ApiInternalServerErrorResponse({
     description: 'An error occurred while getting the country.',
@@ -70,7 +70,7 @@ export class CountriesController {
   })
   async update(
     @Param('id') id: number,
-    @Body() updatedCountryDto: UpdadeCountryDto,
+    @Body() updatedCountryDto: UpdateCountryDto,
   ): Promise<Country> {
     return await this.countriesService.update(id, updatedCountryDto);
   }
@@ -81,7 +81,7 @@ export class CountriesController {
   @ApiInternalServerErrorResponse({
     description: 'An error occurred while updating the country.',
   })
-  async delete(@Param('id') id: number): Promise<void> {
+  async delete(@Param('id') id: number): Promise<{ deleted: boolean }> {
     return await this.countriesService.delete(id);
   }
 }
