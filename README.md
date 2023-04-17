@@ -58,11 +58,15 @@ Instale o Yarn:
   npm install --global yarn
   
   ```
-Criar um arquivo para configurar variaveis de ambiente:
-  > Name: stage.dev.env
-  > Cria-lo na raiz do projeto
+Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
+  > Nome-ie como stage.dev.env
   ```
-  
+   - PORT=3000
+     DB_HOST=DB
+     DB_PORT=5432
+     DB_USERNAME=postgres
+     DB_PASSWORD=postgres
+     DB_DATABASE=postgres
   ```
   
   
