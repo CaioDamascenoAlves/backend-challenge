@@ -79,5 +79,6 @@ O microserviço countries é responsável por criar, listar, deletar e atualizar
 ```
 ```
 A documentação da API pode ser encontrada em http://localhost:3000/api através do Swagger.
+[Imagem da documentação](https://github.com/CaioDamascenoAlves/backend-challenge/blob/master/img/localhost_3000_api%20full_size.png)
 ```
-<img src="./img/localhost_3000_api full_size.png" alt="Swegger" >
+
