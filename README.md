@@ -61,12 +61,12 @@ Instale o Yarn:
 Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
   > Nome-ie como stage.dev.env
   ```
-     PORT=3000
-     DB_HOST=DB
-     DB_PORT=5432
-     DB_USERNAME=postgres
-     DB_PASSWORD=postgres
-     DB_DATABASE=postgres
+  PORT=3000
+  DB_HOST=DB
+  DB_PORT=5432
+  DB_USERNAME=postgres
+  DB_PASSWORD=postgres
+  DB_DATABASE=postgres
   ```
   
   
