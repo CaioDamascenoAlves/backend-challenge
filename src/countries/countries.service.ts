@@ -1,6 +1,6 @@
-import { UpdadeCountryDto } from './dto/updade-country.dto';
+import { UpdateCountryDto } from './dto/updade-country.dto';
 import { CreateCountryDto } from './dto/create-country.dto';
-import { ConflictException, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Country } from './country.entity';
@@ -50,19 +50,18 @@ export class CountriesService {
       const existingCountry = await this.countriesRepository.findOne({
         where: { name: createCountryDto.name, place: createCountryDto.place },
       });
+
       if (existingCountry) {
         throw new HttpException('Country already exists', HttpStatus.CONFLICT);
       }
 
-      const contry = new Country();
-      contry.name = createCountryDto.name;
-      contry.place = createCountryDto.place;
-      contry.meta = createCountryDto.meta;
-      contry.created_at = new Date();
-      contry.updated_at = new Date();
+      const country = this.countriesRepository.create({
+        ...createCountryDto,
+        created_at: new Date(),
+        updated_at: new Date(),
+      });
 
-      const newCountry = this.countriesRepository.create(contry);
-      return await this.countriesRepository.save(newCountry);
+      return await this.countriesRepository.save(country);
     } catch (error) {
       throw new HttpException(
         'An error occurred while creating the country.',
@@ -73,7 +72,7 @@ export class CountriesService {
 
   async update(
     id: number,
-    updadeCountryDto: UpdadeCountryDto,
+    updadeCountryDto: UpdateCountryDto,
   ): Promise<Country> {
     try {
       const existingCountry = await this.countriesRepository.findOne({
@@ -98,23 +97,25 @@ export class CountriesService {
 
       return await this.countriesRepository.save(existingCountry);
     } catch (error) {
-      throw new HttpException(
-        'An error occurred while updating the country.',
-        HttpStatus.INTERNAL_SERVER_ERROR,
-      );
+      if (error.status === HttpStatus.NOT_FOUND) {
+        throw error;
+      } else {
+        throw new HttpException(
+          'An error occurred while updating the country.',
+          HttpStatus.INTERNAL_SERVER_ERROR,
+        );
+      }
     }
   }
 
-  async delete(id: number): Promise<void> {
+  async delete(id: number): Promise<{ deleted: boolean }> {
+    const country = await this.countriesRepository.findOne({ where: { id } });
+    if (!country) {
+      throw new HttpException('Country not found', HttpStatus.NOT_FOUND);
+    }
     try {
-      const existingCountry = await this.countriesRepository.findOne({
-        where: { id },
-      });
-      if (!existingCountry) {
-        throw new HttpException('Country not found', HttpStatus.NOT_FOUND);
-      }
-
       await this.countriesRepository.delete(id);
+      return { deleted: true };
     } catch (error) {
       throw new HttpException(
         'An error occurred while deleting the country.',
