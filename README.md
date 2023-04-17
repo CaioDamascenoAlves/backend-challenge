@@ -74,7 +74,8 @@ Inicie o projeto:
 ```
 ## API
 ```
-A API do projeto é composta por um microserviço countries. O microserviço countries é responsável por criar, listar, deletar e atualizar a tabela country.
+A API do projeto é composta por um microserviço countries. 
+O microserviço countries é responsável por criar, listar, deletar e atualizar a tabela country.
 ```
 ```
 A documentação da API pode ser encontrada em http://localhost:3000/api através do Swagger.
