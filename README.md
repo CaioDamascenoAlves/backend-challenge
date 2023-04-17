@@ -52,12 +52,10 @@ Clone o repositório em sua máquina local:
 Acesse o diretório do projeto:
   ```
   cd backend-challenge
-  
   ```
 Instale o Yarn:
   ```
   npm install --global yarn
-  
   ```
 Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
   > Nomeie como stage.dev.env
@@ -74,5 +72,4 @@ Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
 Inicie o projeto:
 ```
   yarn docker-compose:dev
-  
 ```
