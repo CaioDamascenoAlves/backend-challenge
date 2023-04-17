@@ -1,73 +1,67 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Desafio de Backend
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+<img src="./img/logo-clubpetro.png" style="margin-left: 100px"
+     alt="Clubpetro" width="300">
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- [Descrição](#descrição)
+  - [O Desafio](#o-desafio)
+  - [Requisitos Obrigatórios](#requisitos-obrigatórios)
+  - [Bônus](#bônus)
+- [Submissão e Prazo de Entrega](#submissão-e-prazo-de-entrega)
 
-## Description
+## Descrição
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Este desafio tem como objetivo avaliar as habilidades técnicas do candidato a vaga de desenvolvedor backend no Clubpetro.
 
-## Installation
+#### O Desafio
 
-```bash
-$ yarn install
-```
+O desafio consiste em desenvolver uma API rest que permita o CRUD de lugares para se conhecer ao redor do mundo para alimentar o frontend que pode ser visto na imagem a seguir:
 
-## Running the app
+<img src="./img/challenge.png" alt="Desafio" >
 
-```bash
-# development
-$ yarn run start
+Os dados a ser considerados são:
 
-# watch mode
-$ yarn run start:dev
+- País: O país escolhido;
+- Local: O local dentro do país escolhido;
+- Meta: O mês e o ano que o usuário pretende visitar o local;
+- Url da bandeira do país;
+- Data de criação do registro;
+- Data de atualização do registro.
 
-# production mode
-$ yarn run start:prod
-```
+#### Tecnologias Utilizadas
 
-## Test
+- [NodeJs](https://nodejs.org/en)
+- [NestJs](https://nestjs.com/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [TypeORM](https://typeorm.io/#/);
+- [Docker](https://docs.docker.com/compose/);
+- [Postgres](https://www.postgresql.org/)
+- [Swegger](https://swagger.io/)
 
-```bash
-# unit tests
-$ yarn run test
+#### Requisitos
+- [NodeJs](https://nodejs.org/en)
+- [Docker](https://docs.docker.com/);
+- [Docker Compose](https://docs.docker.com/compose/);
 
-# e2e tests
-$ yarn run test:e2e
+### Como executar o projeto
+1. Clone o repositório em sua máquina local:
+  
+  git clone https://github.com/CaioDamascenoAlves/backend-challenge.git
+  
+2. Acesse o diretório do projeto:
+  
+  cd backend-challenge
+  
+3. Instalar o Yarn:
+  
+  npm install --global yarn
 
-# test coverage
-$ yarn run test:cov
-```
+4. Criar um arquivo para configurar variaveis de ambiente:
+  > Esse arquivo tem que se chamar stage.dev.env
+  
+  
+  
+5. Iniciar projeto:
+  yarn docker-compose:dev
+  yarn docker-compose:dev
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
