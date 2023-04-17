@@ -5,9 +5,9 @@
 
 - [Descrição](#descrição)
   - [O Desafio](#o-desafio)
-  - [Requisitos Obrigatórios](#requisitos-obrigatórios)
-  - [Bônus](#bônus)
-- [Submissão e Prazo de Entrega](#submissão-e-prazo-de-entrega)
+  - [Requisitos Obrigatórios](#tecnologias-utilizadas)
+  - [Bônus](#requisitos)
+  - [Como executar o projeto](#como-executar-o-projeto)
 
 ## Descrição
 
