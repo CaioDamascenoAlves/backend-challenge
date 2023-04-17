@@ -67,9 +67,17 @@ Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
   DB_PASSWORD=postgres
   DB_DATABASE=postgres
   ```
-  
-  
+   
 Inicie o projeto:
 ```
   yarn docker-compose:dev
 ```
+## API
+```
+A API do projeto é composta por um microserviço countries. 
+O microserviço countries é responsável por criar, listar, deletar e atualizar a tabela country.
+```
+```
+A documentação da API pode ser encontrada em http://localhost:3000/api através do Swagger.
+```
+[Imagem da documentação](https://github.com/CaioDamascenoAlves/backend-challenge/blob/master/img/localhost_3000_api%20full_size.png)
