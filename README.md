@@ -21,27 +21,27 @@ O desafio consiste em desenvolver uma API rest que permita o CRUD de lugares par
 
 Os dados a ser considerados são:
 
-- País: O país escolhido;
+- País: O país escolhido
 - Local: O local dentro do país escolhido;
-- Meta: O mês e o ano que o usuário pretende visitar o local;
-- Url da bandeira do país;
-- Data de criação do registro;
-- Data de atualização do registro.
+- Meta: O mês e o ano que o usuário pretende visitar o local
+- Url da bandeira do país
+- Data de criação do registro
+- Data de atualização do registro
 
 #### Tecnologias Utilizadas
 
 - [NodeJs](https://nodejs.org/en)
 - [NestJs](https://nestjs.com/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [TypeORM](https://typeorm.io/#/);
-- [Docker](https://docs.docker.com/compose/);
+- [TypeORM](https://typeorm.io/#/)
+- [Docker](https://docs.docker.com/compose/)
 - [Postgres](https://www.postgresql.org/)
 - [Swegger](https://swagger.io/)
 
 #### Requisitos
 - [NodeJs](https://nodejs.org/en)
-- [Docker](https://docs.docker.com/);
-- [Docker Compose](https://docs.docker.com/compose/);
+- [Docker](https://docs.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
 
 ### Como executar o projeto
 Clone o repositório em sua máquina local:
