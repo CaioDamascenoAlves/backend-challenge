@@ -6,11 +6,12 @@ services:
       dockerfile: Dockerfile
       target: dev
     ports:
-        - 3000:3000
+      - 3000:3000
     volumes:
       - ./src:/app/src
     depends_on:
       - db
+    container_name: backend-challenge-app
 
   db:
     image: postgres:15
@@ -21,6 +22,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_USER: postgres
       POSTGRES_DB: postgres
+    container_name: backend-challenge-db
   
   dbadmin:
     image: dpage/pgadmin4
@@ -30,3 +32,4 @@ services:
     environment:
       PGADMIN_DEFAULT_EMAIL: admin@admin.com
       PGADMIN_DEFAULT_PASSWORD: pgadmin4
+    container_name: backend-challenge-dbadmin
