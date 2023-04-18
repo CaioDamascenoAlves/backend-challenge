@@ -7,6 +7,7 @@
   - [O Desafio](#o-desafio)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
   - [Requisitos](#requisitos)
+  - [Docker Compose](#docker-compose)
   - [Como executar o projeto](#como-executar-o-projeto)
   - [API](#api)
   - [Persistência dos dados](#persistencia-dos-dados)
