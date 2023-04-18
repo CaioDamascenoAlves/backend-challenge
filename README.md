@@ -33,21 +33,22 @@ Os dados a ser considerados são:
 
 #### Tecnologias Utilizadas
 
-- [Docker](https://docs.docker.com/compose/){:target="_blank"}
-- [Jest](https://jestjs.io/pt-BR/){:target="_blank"}
-- [NestJs](https://nestjs.com/){:target="_blank"}
-- [NodeJs](https://nodejs.org/en){:target="_blank"}
-- [Postgres](https://www.postgresql.org/){:target="_blank"}
-- [PgAdmin4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html){:target="_blank"}
-- [TypeORM](https://typeorm.io/#/){:target="_blank"}
-- [TypeScript](https://www.typescriptlang.org/){:target="_blank"}
-- [Swagger](https://swagger.io/){:target="_blank"}
+- [Docker](https://docs.docker.com/compose/){target="_blank"}
+- [Jest](https://jestjs.io/pt-BR/){target="_blank"}
+- [NestJs](https://nestjs.com/){target="_blank"}
+- [NodeJs](https://nodejs.org/en){target="_blank"}
+- [Postgres](https://www.postgresql.org/){target="_blank"}
+- [PgAdmin4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html){target="_blank"}
+- [TypeORM](https://typeorm.io/#/){target="_blank"}
+- [TypeScript](https://www.typescriptlang.org/){target="_blank"}
+- [Swagger](https://swagger.io/){target="_blank"}
 
 #### Requisitos
 
-- [Docker](https://docs.docker.com/){:target="_blank"}
-- [Docker Compose](https://docs.docker.com/compose/){:target="_blank"}
-- [NodeJs](https://nodejs.org/en){:target="_blank"}
+- [Docker](https://docs.docker.com/){target="_blank"}
+- [Docker Compose](https://docs.docker.com/compose/){target="_blank"}
+- [NodeJs](https://nodejs.org/en){target="_blank"}
+
 
 
 ### Docker Compose
