@@ -9,7 +9,7 @@
   - [Requisitos](#requisitos)
   - [Como executar o projeto](#como-executar-o-projeto)
   - [API](#api)
-  - [Persistência dos dados](#persistencia-dos-Dados-pgadmin4)
+  - [Persistência dos dados](#persistencia-dos-dados)
 
 ## Descrição
 
@@ -89,8 +89,8 @@ A documentação da API pode ser encontrada em http://localhost:3000/api atravé
 ```
 [Imagem da documentação](https://github.com/CaioDamascenoAlves/backend-challenge/blob/master/img/localhost_3000_api%20full_size.png)
 
-## Persistencia dos Dados - PgAdmin4:
-> http://localhost:5050
+## Persistencia dos Dados:
+> Acesse o PgAdmin4 em http://localhost:5050
 
 <img src="./img/pgadmin4.png"  width="900">
 
