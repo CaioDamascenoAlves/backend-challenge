@@ -33,21 +33,21 @@ Os dados a ser considerados são:
 
 #### Tecnologias Utilizadas
 
-- [Docker](https://docs.docker.com/compose/)
-- [Jest](https://jestjs.io/pt-BR/)
-- [NestJs](https://nestjs.com/)
-- [NodeJs](https://nodejs.org/en)
-- [Postgres](https://www.postgresql.org/)
-- [PgAdmin4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html)
-- [TypeORM](https://typeorm.io/#/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Swegger](https://swagger.io/)
+<a href="https://docs.docker.com/compose/" target="_blank">Docker</a>
+<a href="https://jestjs.io/pt-BR/" target="_blank">Jest</a>
+<a href="https://nestjs.com/" target="_blank">NestJs</a>
+<a href="https://nodejs.org/en" target="_blank">NodeJs</a>
+<a href="https://www.postgresql.org/" target="_blank">Postgres</a>
+<a href="https://www.pgadmin.org/docs/pgadmin4/latest/index.html" target="_blank">PgAdmin4</a>
+<a href="https://typeorm.io/#/" target="_blank">TypeORM</a>
+<a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
+<a href="https://swagger.io/" target="_blank">Swegger</a>
 
 #### Requisitos
 
-- [Docker](https://docs.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [NodeJs](https://nodejs.org/en)
+<a href="https://docs.docker.com/" target="_blank">Docker</a>
+<a href="https://docs.docker.com/compose/" target="_blank">Docker Compose</a>
+<a href="https://nodejs.org/en" target="_blank">NodeJs</a>
 
 ### Docker Compose
 A figura a seguir ilustra a composição de conteineres desenvolvida
