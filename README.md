@@ -7,6 +7,7 @@
   - [O Desafio](#o-desafio)
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
   - [Requisitos](#requisitos)
+  - [Docker Compose](#docker-compose)
   - [Como executar o projeto](#como-executar-o-projeto)
   - [API](#api)
   - [Persistência dos dados](#persistencia-dos-dados)
@@ -32,21 +33,32 @@ Os dados a ser considerados são:
 
 #### Tecnologias Utilizadas
 
-- [Docker](https://docs.docker.com/compose/)
-- [Jest](https://jestjs.io/pt-BR/)
-- [NestJs](https://nestjs.com/)
-- [NodeJs](https://nodejs.org/en)
-- [Postgres](https://www.postgresql.org/)
-- [PgAdmin4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html)
-- [TypeORM](https://typeorm.io/#/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Swegger](https://swagger.io/)
+- <a href="https://docs.docker.com/compose/" target="_blank">Docker</a>
+- <a href="https://jestjs.io/pt-BR/" target="_blank">Jest</a>
+- <a href="https://nestjs.com/" target="_blank">NestJs</a>
+- <a href="https://nodejs.org/en" target="_blank">NodeJs</a>
+- <a href="https://www.postgresql.org/" target="_blank">Postgres</a>
+- <a href="https://www.pgadmin.org/docs/pgadmin4/latest/index.html" target="_blank">PgAdmin4</a>
+- <a href="https://typeorm.io/#/" target="_blank">TypeORM</a>
+- <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a>
+- <a href="https://swagger.io/" target="_blank">Swagger</a>
 
 #### Requisitos
 
-- [Docker](https://docs.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-- [NodeJs](https://nodejs.org/en)
+- <a href="https://docs.docker.com/" target="_blank">Docker</a>
+- <a href="https://docs.docker.com/compose/" target="_blank">Docker Compose</a>
+- <a href="https://nodejs.org/en" target="_blank">NodeJs</a>
+
+
+
+
+
+
+
+### Docker Compose
+A figura a seguir ilustra a composição de conteineres desenvolvida
+
+<img src="./img/docker-compose.png"  width="500">
 
 ### Como executar o projeto
 Clone o repositório em sua máquina local:
@@ -94,7 +106,7 @@ A documentação da API pode ser encontrada em http://localhost:3000/api atravé
 ## Persistencia dos Dados:
 > Acesse o PgAdmin4 em http://localhost:5050
 
-<img src="./img/pgadmin4.png"  width="900">
+<img src="./img/pgadmin4.png"  width="500">
 
 ```
 user: admin@admin.com
@@ -102,11 +114,11 @@ senha: pgadmin4
 ```
 Ao logar no PgAdmin4 registre um novo server com um nome qualquer e com as configurações do arquivo stage.dev.env
 
-<img src="./img/register_server.png"  width="900">
+<img src="./img/register_server.png"  width="500">
 
 Após essa configuração faça uma consulta na tabela country como:
 ```
 select * from country
 ```
-<img src="./img/consultaSQL.png"  width="900">
+<img src="./img/consultaSQL.png"  width="500">
 
