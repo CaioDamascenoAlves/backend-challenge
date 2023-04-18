@@ -49,18 +49,15 @@ Os dados a ser considerados são:
 - <a href="https://docs.docker.com/compose/" target="_blank">Docker Compose</a>
 - <a href="https://nodejs.org/en" target="_blank">NodeJs</a>
 
-
-
-
-
-
-
 ### Docker Compose
 A figura a seguir ilustra a composição de conteineres desenvolvida
 
 <img src="./img/docker-compose.png"  width="500">
 
-### Como executar o projeto
+
+
+## Como executar o projeto
+> O primeiro build pode demorar um pouco
 Clone o repositório em sua máquina local:
   ```
   git clone https://github.com/CaioDamascenoAlves/backend-challenge.git
@@ -73,19 +70,9 @@ Instale o Yarn:
   ```
   npm install --global yarn
   ```
-Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
-  > Nomeie como stage.dev.env
-  ```
-  PORT=3000
-  DB_HOST=DB
-  DB_PORT=5432
-  DB_USERNAME=postgres
-  DB_PASSWORD=postgres
-  DB_DATABASE=postgres
-  ```
-   
-Inicie os testes:
-> O primeiro build pode demorar um pouco
+  ### Como rodar o tests
+ [Source code image](https://github.com/CaioDamascenoAlves/backend-challenge/blob/master/img/test_exemple.png)
+Inicie os tests:
 ```
 yarn docker-compose:test
 ```
