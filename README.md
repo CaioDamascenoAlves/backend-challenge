@@ -100,7 +100,7 @@ A documentação da API pode ser encontrada em http://localhost:3000/api atravé
 ## Persistencia dos Dados:
 > Acesse o PgAdmin4 em http://localhost:5050
 
-<img src="./img/pgadmin4.png"  width="900">
+<img src="./img/pgadmin4.png"  width="500">
 
 ```
 user: admin@admin.com
@@ -108,7 +108,7 @@ senha: pgadmin4
 ```
 Ao logar no PgAdmin4 registre um novo server com um nome qualquer e com as configurações do arquivo stage.dev.env
 
-<img src="./img/register_server.png"  width="900">
+<img src="./img/register_server.png"  width="500">
 
 Após essa configuração faça uma consulta na tabela country como:
 ```
