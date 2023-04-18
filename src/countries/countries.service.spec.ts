@@ -40,8 +40,8 @@ describe('CountriesService', () => {
   describe('findAll', () => {
     it('should return an array of countries', async () => {
       const countries = [
-        { id: 1, name: 'Country 1', place: 'Place 1', meta: 'Meta 1' },
-        { id: 2, name: 'Country 2', place: 'Place 2', meta: 'Meta 2' },
+        { id: 1, name: 'Country 1', place: 'Place 1', meta: '2024-01-01' },
+        { id: 2, name: 'Country 2', place: 'Place 2', meta: '2024-01-01' },
       ];
       repositoryMock.find.mockReturnValue(countries);
 
@@ -69,7 +69,7 @@ describe('CountriesService', () => {
         id: 1,
         name: 'Country 1',
         place: 'Place 1',
-        meta: 'Meta 1',
+        meta: '2024-01-01',
       };
       repositoryMock.findOne.mockReturnValue(country);
 
