@@ -100,6 +100,32 @@ O microserviço countries é responsável por criar, listar, deletar e atualizar
 
 Figura: Swegger
 
+### Respontas da API
+
+#### @Get
+
+<img src="./img/get_responses.png"  width="500">
+
+
+#### @Post
+
+<img src="./img/post_responses.png"  width="500">
+
+
+#### @GetById
+
+<img src="./img/getid_responses.png"  width="500">
+
+
+#### @Patch
+
+<img src="./img/patch_responses.png"  width="500">
+
+#### @Delete
+
+<img src="./img/delete_responses.png"  width="500">
+
+
 ## Persistencia dos Dados:
 > Acesse o PgAdmin4 em http://localhost:5050
 
