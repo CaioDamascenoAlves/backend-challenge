@@ -58,6 +58,7 @@ A figura a seguir ilustra a composição de conteineres desenvolvida
 
 ## Como executar o projeto
 > O primeiro build pode demorar um pouco
+
 Clone o repositório em sua máquina local:
   ```
   git clone https://github.com/CaioDamascenoAlves/backend-challenge.git
