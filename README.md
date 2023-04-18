@@ -33,6 +33,7 @@ Os dados a ser considerados são:
 #### Tecnologias Utilizadas
 
 - [Docker](https://docs.docker.com/compose/)
+- [Jest](https://jestjs.io/pt-BR/)
 - [NestJs](https://nestjs.com/)
 - [NodeJs](https://nodejs.org/en)
 - [Postgres](https://www.postgresql.org/)
