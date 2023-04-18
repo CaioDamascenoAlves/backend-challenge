@@ -8,6 +8,8 @@
   - [Tecnologias Utilizadas](#tecnologias-utilizadas)
   - [Requisitos](#requisitos)
   - [Como executar o projeto](#como-executar-o-projeto)
+  - [API](#api)
+  - [Persistência dos dados](#persistencia-dos-Dados-pgadmin4)
 
 ## Descrição
 
