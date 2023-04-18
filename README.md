@@ -34,6 +34,7 @@ Os dados a ser considerados são:
 - [NestJs](https://nestjs.com/)
 - [NodeJs](https://nodejs.org/en)
 - [Postgres](https://www.postgresql.org/)
+- [PgAdmin4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html)
 - [TypeORM](https://typeorm.io/#/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Swegger](https://swagger.io/)
