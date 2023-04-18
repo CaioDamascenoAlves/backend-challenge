@@ -68,9 +68,13 @@ Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
   DB_DATABASE=postgres
   ```
    
+Inicie os testes:
+```
+yarn docker-compose:test
+```
 Inicie o projeto:
 ```
-  yarn docker-compose:dev
+yarn docker-compose:dev
 ```
 ## API
 ```
@@ -81,3 +85,22 @@ O microserviço countries é responsável por criar, listar, deletar e atualizar
 A documentação da API pode ser encontrada em http://localhost:3000/api através do Swagger.
 ```
 [Imagem da documentação](https://github.com/CaioDamascenoAlves/backend-challenge/blob/master/img/localhost_3000_api%20full_size.png)
+
+## Persistencia dos Dados - PgAdmin4:
+> http://localhost:5050
+
+<img src="./img/pgadmin4.png"  width="900">
+```
+user: admin@admin.com
+senha: pgadmin4
+```
+Ao logar no PgAdmin4 registre um novo server com um nome qualquer e com as configurações do arquivo stage.dev.env
+
+<img src="./img/register_server.png"  width="900">
+
+Após essa configuração faça uma consulta na tabela country como:
+```
+select * from country
+```
+<img src="./img/consultaSQL.png"  width="900">
+
