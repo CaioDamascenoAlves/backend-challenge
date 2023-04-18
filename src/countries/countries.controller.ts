@@ -63,7 +63,7 @@ export class CountriesController {
 
   @Patch(':id')
   @ApiOkResponse({ description: 'Update a country.', type: Country })
-  @ApiBadRequestResponse({ description: 'Bad request' })
+  @ApiBadRequestResponse({ description: `Bad Request || Field is not a valid field to update.` })
   @ApiNotFoundResponse({ description: 'Country not found' })
   @ApiInternalServerErrorResponse({
     description: 'An error occurred while updating the country.',
