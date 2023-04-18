@@ -114,5 +114,5 @@ Após essa configuração faça uma consulta na tabela country como:
 ```
 select * from country
 ```
-<img src="./img/consultaSQL.png"  width="900">
+<img src="./img/consultaSQL.png"  width="500">
 
