@@ -90,6 +90,7 @@ A documentação da API pode ser encontrada em http://localhost:3000/api atravé
 > http://localhost:5050
 
 <img src="./img/pgadmin4.png"  width="900">
+
 ```
 user: admin@admin.com
 senha: pgadmin4
