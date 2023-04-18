@@ -73,6 +73,7 @@ Criar um arquivo para configurar variaveis de ambiente na raiz do projeto:
   ```
    
 Inicie os testes:
+> O primeiro build pode demorar um pouco
 ```
 yarn docker-compose:test
 ```
