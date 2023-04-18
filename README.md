@@ -50,7 +50,7 @@ Os dados a ser considerados são:
 
 ### Docker Compose
 A figura a seguir ilustra a composição de conteineres desenvolvida
-<img src="./img/consultaSQL.png"  width="900">
+<img src="./img/docker-compose.png"  width="900">
 
 ### Como executar o projeto
 Clone o repositório em sua máquina local:
