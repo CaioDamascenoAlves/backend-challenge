@@ -50,11 +50,10 @@ Os dados a ser considerados são:
 - <a href="https://nodejs.org/en" target="_blank">NodeJs</a>
 
 ### Docker Compose
-A figura a seguir ilustra a composição de conteineres desenvolvida
 
 <img src="./img/docker-compose.png"  width="500">
 
-
+Figura: Composição de Containers
 
 ## Como executar o projeto
 > O primeiro build pode demorar um pouco
@@ -81,15 +80,25 @@ Inicie o projeto:
 ```
 yarn docker-compose:dev
 ```
+## Requisitos funcionais do desafio
+
+- Apenas o Local e a Meta poderão ser editados;
+- O mesmo local em determinado país não poderá ser adicionado de forma duplicada;
+- A listagem dos dados deverá ser ordenada de forma crescente pela meta;
+
+Esses requisitos funcionais podem ser testasdos com Swegger de uma maneira simples.
+
 ## API
+>Se rodar o projeto, acesse a documentação em http://localhost:3000/api através do Swagger.
+
 ```
 A API do projeto é composta por um microserviço countries. 
 O microserviço countries é responsável por criar, listar, deletar e atualizar a tabela country.
 ```
-```
-A documentação da API pode ser encontrada em http://localhost:3000/api através do Swagger.
-```
-[Imagem da documentação](https://github.com/CaioDamascenoAlves/backend-challenge/blob/master/img/localhost_3000_api%20full_size.png)
+
+<img src="./img/Swegger.png"  width="500">
+
+Figura: Swegger
 
 ## Persistencia dos Dados:
 > Acesse o PgAdmin4 em http://localhost:5050
@@ -110,3 +119,6 @@ select * from country
 ```
 <img src="./img/consultaSQL.png"  width="500">
 
+Perceba que na tabela a apenas uma linha gravada. No seu caso pode ser difirente.
+
+ 
